@@ -8,7 +8,8 @@ app.get('/', function (req, res) {
 let server = app.listen(8080, function () {
     console.log("Tic-Tac-Toe server listening on http:\\127.0.0.1:8080");
 });
-const io = require('socket.io').listen(server).sockets;
+const io = require('socket.io')(server);
+
 let connections = 0;
 let start = 0;
 let p1;
